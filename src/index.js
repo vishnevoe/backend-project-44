@@ -1,15 +1,13 @@
 import readlineSync from 'readline-sync';
-import brainEven from './games/brain-even.js';
 
-export default () => {
+export default (rules, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  const [rules] = brainEven();
   console.log(rules);
 
   for (let round = 1; round <= 3; round += 1) {
-    const [, question, rightAnswer] = brainEven();
+    const [question, rightAnswer] = generateRound();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
