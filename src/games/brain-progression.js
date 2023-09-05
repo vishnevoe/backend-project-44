@@ -18,7 +18,7 @@ const generateRound = () => {
   const deletedElement = progression[indexOfDeletedElement];
   progression[indexOfDeletedElement] = '..';
 
-  const question = progression.join(', ');
+  const question = progression.join(' ');
 
   const rightAnswer = String(deletedElement);
   const gameСonditions = [question, rightAnswer];
